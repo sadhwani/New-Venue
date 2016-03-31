@@ -4,7 +4,7 @@
 
 
 Section::Section(string section_name_):
-	section_name(section_name_), number_of_seats(0)
+	section_name(section_name_), number_of_seat_rows(0)
 {}
 
 
@@ -12,11 +12,16 @@ Section::~Section()
 {
 }
 
-void Section::Add_Seat(const Seat* new_seat)
+void Section::Add_Seat_Row(const Seat_Row* new_seat_row)
 {
 
-	assert(number_of_seats < MAX_SEATS);
-	seats[number_of_seats++] = new_seat;
+	assert(number_of_seat_rows < MAX_SEATS);
+	seats[number_of_seat_rows++] = new_seat_row; //Save a seat row in the array of sections
 
 }
 
+/*
+For display(), run through section array, and use the seat row display method to print out each row in a section
+cout << "Section " << section_name << endl;
+for loop to display all seat_rows in section
+*/
