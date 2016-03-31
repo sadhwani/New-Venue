@@ -132,32 +132,11 @@ void *Create_Section(string section_name)
 		cin >> last_seat;
 		clear_input_buffer();
 		
-
-		//Not sure if this is the best way to initialize the section, or if it is implemeneted correctly.
-		/*
-			Questions:
-			How Does the program know which row a certain seat is in? 
-		
-		
-		
-		*/
-
-		// For this to work we need to find the correct seat row in array of seat rows to take the seats from them to put into section.
-		//Seat_Row *row  = venue->Get_Seat_Row(i);
-		
-
-		/*for (int i = 0; i < last_seat; i++)
-		{
-			section->Add_Seat(row->seats[i])
-		}
-
-		*/
+		Section* sect = new Section(section_name, row_name, first_seat, last_seat);
+		venue->Add_Section(sect);
 
 	}
 }
-
-
-
 
 int main()
 {
