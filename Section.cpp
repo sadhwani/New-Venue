@@ -3,8 +3,8 @@
 
 
 
-Section::Section(string section_name_):
-	section_name(section_name_), number_of_seat_rows(0)
+Section::Section(string section_name_, string row_name_, first_seat_, last_seat_):
+	section_name(section_name_), string row_name_(row_name), first_seat_(first_seat), last_seat_(last_seat), number_of_seat_rows(0)
 {}
 
 
