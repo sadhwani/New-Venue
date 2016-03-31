@@ -32,6 +32,15 @@ void Venue::Display() const
         const Seat_Row* row = seat_rows[i];
         row->Display();
     }
+    
+    cout << endl;
+    cout << endl;
+    cout << "Seating Sections:" << endl;
+    for (int i = 0; i < number_of_sections; ++i)
+    {
+        const Section* section = sections[i];
+        section->Display();
+    }
 }
 
 // Return number of seats
