@@ -20,13 +20,10 @@ void Section::Add_Seat_Row(const Seat_Row* new_seat_row)
 
 }
 
-/*
-For display(), run through section array, and use the seat row display method to print out each row in a section
-cout << "Section " << section_name << endl;
-for loop to display all seat_rows in section
-*/
 void Section::Display() const{
 	
 	cout << "Section " << section_name << endl;
+	cout << "Row " << row_name << " Seats " << first_seat << " - " << last_seat << endl;
+	cout << endl;
 	
 }
