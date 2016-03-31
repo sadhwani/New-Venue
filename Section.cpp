@@ -16,7 +16,7 @@ void Section::Add_Seat_Row(const Seat_Row* new_seat_row)
 {
 
 	assert(number_of_seat_rows < MAX_SEATS);
-	seats[number_of_seat_rows++] = new_seat_row; //Save a seat row in the array of sections
+	seat_rows[number_of_seat_rows++] = new_seat_row; //Save a seat row in the array of sections
 
 }
 
