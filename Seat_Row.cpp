@@ -19,12 +19,12 @@ void Seat_Row::Add_Seat(const Seat* new_seat)
 
 void Seat_Row::Display() const
 {
-    cout << "Row " << row_name << " has "
-        << number_of_seats << " seats" << endl;
-    for (int i = 0; i < number_of_seats; ++i)
+    cout << "Row " << row_name << " Seats 1 - "
+        << number_of_seats << endl;
+    /*for (int i = 0; i < number_of_seats; ++i)
     {
         cout << "\t";		// Indent the Seat description
         seats[i]->Display();
-    }
+    }*/
 }
 
