@@ -25,3 +25,8 @@ For display(), run through section array, and use the seat row display method to
 cout << "Section " << section_name << endl;
 for loop to display all seat_rows in section
 */
+void Section::Display() const{
+	
+	cout << "Section " << section_name << endl;
+	
+}
