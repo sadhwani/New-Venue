@@ -3,17 +3,20 @@
 #include "Address.h"
 #include "Seat.h"
 #include "Seat_Row.h"
+#include “Section.h”
 
 class Venue
 {
 public:
     static const int MAX_SEAT_ROWS = 1000;
+    static const int MAX_SECTIONS = 10;
 
 private:
     string name;
     const Address* address;
     const Seat_Row* seat_rows[MAX_SEAT_ROWS];
     int number_of_seat_rows;
+    int number_of_sections;
 
 public:
     Venue(const string& name_,
@@ -24,6 +27,7 @@ public:
     int Capacity() const;     // Number of seats
 
     void Display() const;
+    void Add_Section(const Section* section);
 
     int Number_of_Seat_Rows() const
     {
