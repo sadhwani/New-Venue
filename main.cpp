@@ -5,10 +5,8 @@
 #include "Venue.h"
 #include "Section.h"
 
-
 using namespace std;
-
-using namespace std;
+#DEFINE MAX_SECTIONS 10
 
 Section *Create_Section(string section_name);
 
@@ -86,11 +84,12 @@ Venue* Create_Venue()
 		cout << "Number of seats: ";
 		cin >> num_seats;
 		clear_input_buffer();
+		
 		Seat_Row* sr = Create_Seat_Row(row_name, num_seats);
 		venue->Add_Seat_Row(sr);
 	}
 
-	/*cout << "Enter seating information:\n";
+	cout << "Enter seating information:\n";
 	cout << "Enter blank for Section name when finished\n\n";
 
 
@@ -99,25 +98,21 @@ Venue* Create_Venue()
 	{
 		cout << "Enter Section Name: ";
 		getline(cin, section_name);
+	
+		if (section_name == "")
+			break;
 
 		Create_Section(section_name);
-
-
 	}
-	*/
+	
     return venue;
 }
 
-
-//This is my attempt at creating a function to initialize a section. Might not be the best way to do it.
-Section *Create_Section(string section_name)
+void *Create_Section(string section_name)
 {
 	int NUM_ROWS = 10;
 	string row_name;
 	int first_seat, last_seat;
-	
-	Section *section = new Section(section_name);
-	
 	
 	for (int i = 0; i < NUM_ROWS; i++)
 	{
@@ -126,6 +121,10 @@ Section *Create_Section(string section_name)
 
 		cout << "Row name: ";
 		getline(cin, row_name);
+	
+		if (row_name == "")
+			break;
+	
 		cout << "First seat number: ";
 		cin >> first_seat;
 		clear_input_buffer();
@@ -155,7 +154,6 @@ Section *Create_Section(string section_name)
 		*/
 
 	}
-	return section;
 }
 
 
@@ -168,9 +166,10 @@ int main()
     cout << "This is New Venue program\n\n";
 
     Venue* venue = Create_Venue();
+	venue->Display();	//Displays venue
 
 
-	//Display venue
+	
 
     cin.get();   // Hold the window open
     return 0;
