@@ -27,7 +27,7 @@ void Venue::Display() const
 {
     cout << name << endl;
     address->Display();
-    for (int i = 0; i < number_of_seat_rows; ++i)
+    for (int i = 0; i < number_of_seat_rows; i++)
     {
         const Seat_Row* row = seat_rows[i];
         row->Display();
@@ -36,7 +36,7 @@ void Venue::Display() const
     cout << endl;
     cout << endl;
     cout << "Seating Sections:" << endl;
-    for (int i = 0; i < number_of_sections; ++i)
+    for (int i = 0; i < number_of_sections; i++)
     {
         const Section* section = sections[i];
         section->Display();

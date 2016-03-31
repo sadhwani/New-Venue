@@ -13,9 +13,9 @@ private:
 	string section_name;
 	string row_name;
 	const Seat_Row* seat_rows[MAX_SEAT_ROWS];
-	int number_of_seat_rows;
 	int first_seat;
 	int last_seat;
+    int number_of_seat_rows;
 
 public:
 	Section(string section_name_, string row_name_, int first_seat_, int last_seat_);
