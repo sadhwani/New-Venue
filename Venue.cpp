@@ -20,11 +20,11 @@ void Venue::Display() const
 {
     cout << name << endl;
     address->Display();
-    /*for (int i = 0; i < number_of_seat_rows; ++i)
+    for (int i = 0; i < number_of_seat_rows; ++i)
     {
         const Seat_Row* row = seat_rows[i];
         row->Display();
-    }*/
+    }
 }
 
 // Return number of seats
