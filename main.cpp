@@ -64,6 +64,7 @@ Seat_Row* Create_Seat_Row(const string seat_row_name,
 Venue* Create_Venue()
 {
 	string name;
+	cout << "Please enter venue information" << endl;
 	cout << "Venue Name: ";
 	getline(cin, name);
 
@@ -145,12 +146,16 @@ int main()
     cout << "This is New Venue program\n\n";
 
     Venue* venue = Create_Venue();
+    
+    cout << "The new Venue: " << endl;
+    
 	venue->Display();	//Displays venue
 
 
 	
 
     cin.get();   // Hold the window open
+    cin.get();
     return 0;
 }
 
