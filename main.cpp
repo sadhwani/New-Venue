@@ -3,8 +3,6 @@
 #include "Seat.h"
 #include "Seat_Row.h"
 #include "Venue.h"
-#include "Performance.h"
-#include "Ticket.h"
 #include "Section.h"
 
 
