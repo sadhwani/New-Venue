@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
+#include "Section.h"
 #include "Address.h"
 #include "Seat.h"
 #include "Seat_Row.h"
-#include “Section.h”
 
 class Venue
 {
@@ -17,6 +17,7 @@ private:
     const Seat_Row* seat_rows[MAX_SEAT_ROWS];
     int number_of_seat_rows;
     int number_of_sections;
+    const Section* sections[MAX_SEAT_ROWS];
 
 public:
     Venue(const string& name_,

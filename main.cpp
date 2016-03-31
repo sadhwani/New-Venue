@@ -4,11 +4,12 @@
 #include "Seat_Row.h"
 #include "Venue.h"
 #include "Section.h"
+#define MAX_SECTIONS 10
+
 
 using namespace std;
-#DEFINE MAX_SECTIONS 10
 
-Section *Create_Section(string section_name);
+//Section *Create_Section(string section_name);
 
 
 void clear_input_buffer()
@@ -58,6 +59,35 @@ Seat_Row* Create_Seat_Row(const string seat_row_name,
     return row;
 }
 
+void Create_Section(string section_name, Venue* venue)
+{
+    int NUM_ROWS = 10;
+    string row_name;
+    int first_seat, last_seat;
+    int i = 0;
+    for (i = 0; i < NUM_ROWS; i++)
+    {
+        cout << "Enter row names and seat number ranges\n";
+        cout << "Enter a blank line for row name when finished\n\n";
+        
+        cout << "Row name: ";
+        getline(cin, row_name);
+        
+        if (row_name == "")
+            break;
+        
+        cout << "First seat number: ";
+        cin >> first_seat;
+        clear_input_buffer();
+        cout << "Last seat number: ";
+        cin >> last_seat;
+        clear_input_buffer();
+        
+        Section* sect = new Section(section_name, row_name, first_seat, last_seat);
+        venue->Add_Section(sect);
+        
+    }
+}
 
 //Main function for the venue's input. Houses all of the other functions to create and add
 //other objects that the venue has (address, seat rows, sections).
@@ -70,8 +100,8 @@ Venue* Create_Venue()
 
     Address* adr = Create_Address();
     Venue* venue = new Venue(name, *adr);
-
-	for (int i = 0; i < venue->MAX_SEAT_ROWS; i++)
+    int i = 0;
+	for (i = 0; i < venue->MAX_SEAT_ROWS; i++)
 	{
 		string row_name;
 		int num_seats;
@@ -95,7 +125,7 @@ Venue* Create_Venue()
 
 
 	string section_name;
-	for(int = 0; i < MAX_SECTIONS; i++)
+	for(i = 0; i < MAX_SECTIONS; i++)
 	{
 		cout << "Enter Section Name: ";
 		getline(cin, section_name);
@@ -103,41 +133,13 @@ Venue* Create_Venue()
 		if (section_name == "")
 			break;
 
-		Create_Section(section_name);
+		Create_Section(section_name, venue);
 	}
 	
     return venue;
 }
 
-void *Create_Section(string section_name)
-{
-	int NUM_ROWS = 10;
-	string row_name;
-	int first_seat, last_seat;
-	
-	for (int i = 0; i < NUM_ROWS; i++)
-	{
-		cout << "Enter row names and seat number ranges\n";
-		cout << "Enter a blank line for row name when finished\n\n";
 
-		cout << "Row name: ";
-		getline(cin, row_name);
-	
-		if (row_name == "")
-			break;
-	
-		cout << "First seat number: ";
-		cin >> first_seat;
-		clear_input_buffer();
-		cout << "Last seat number: ";
-		cin >> last_seat;
-		clear_input_buffer();
-		
-		Section* sect = new Section(section_name, row_name, first_seat, last_seat);
-		venue->Add_Section(sect);
-
-	}
-}
 
 int main()
 {
