@@ -65,6 +65,7 @@ void Create_Section(string section_name, Venue* venue)
     string row_name;
     int first_seat, last_seat;
     int i = 0;
+    
     for (i = 0; i < NUM_ROWS; i++)
     {
         cout << "Enter row names and seat number ranges\n";
@@ -99,8 +100,9 @@ Venue* Create_Venue()
 	getline(cin, name);
 
     Address* adr = Create_Address();
-    Venue* venue = new Venue(name, *adr);
+    Venue* venue =new Venue(name, *adr);
     int i = 0;
+    cout<<"Enter Seat Row information\n\n"; 
 	for (i = 0; i < venue->MAX_SEAT_ROWS; i++)
 	{
 		string row_name;
@@ -120,7 +122,7 @@ Venue* Create_Venue()
 		venue->Add_Seat_Row(sr);
 	}
 
-	cout << "Enter seating information:\n";
+	cout << "Enter seating section information:\n";
 	cout << "Enter blank for Section name when finished\n\n";
 
 
