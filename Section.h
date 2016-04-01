@@ -22,6 +22,7 @@ public:
 	~Section();
 
 	void Add_Seat_Row(const Seat_Row* new_seat_row);
+	string getName() const {return section_name;};
 	void Display() const;
 };
 
