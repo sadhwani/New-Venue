@@ -23,7 +23,6 @@ void Section::Add_Seat_Row(const Seat_Row* new_seat_row)
 
 void Section::Display() const{
 	
-    cout << "Section " << section_name << endl;
 	cout << "Row " << row_name << " Seats " << first_seat << " - " << last_seat << endl;
 	cout << endl;
 	
