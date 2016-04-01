@@ -39,6 +39,7 @@ void Venue::Display() const
     for (int i = 0; i < number_of_sections; i++)
     {
         const Section* section = sections[i];
+        cout << "Section " << sections[i]->getName(); << endl;
         section->Display();
     }
 }
